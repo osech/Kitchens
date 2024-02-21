@@ -23,7 +23,7 @@ function pages() {
 }
 
 function images() {
-    return src(['app/images/src/**/*.*', '!app/images/src/*.svg'])
+    return src(['app/images/src/**/*.*', '!app/images/src/**/*.svg'])
         .pipe(newer('app/images'))
         .pipe(avif({ quality : 50 }))
 
@@ -68,7 +68,7 @@ function watching() {
             baseDir: "app"
         }
     })
-    watch(['app/scss/style.scss'], styles)
+    watch(['app/scss/*.scss'], styles)
     watch(['app/images/src'], images)
     watch(['app/pages/*', 'app/components/*'], pages)
     watch(['app/js/main.js'], scripts)
